@@ -23,7 +23,8 @@ public class Menu {
 			System.out.println("6. 난수까지의 합계");
 			System.out.println("7. 구구단");
 			System.out.println("8. 주사위 숫자 알아맞추기 게임");
-			System.out.println("9. 프로그램 종료");
+			System.out.println("9. 로또번호 출력");
+			System.out.println("10.프로그램 종료");
 			System.out.print("메뉴 번호 : ");
 
 			num = Integer.parseInt(sc.next());
@@ -45,14 +46,17 @@ public class Menu {
 				break;
 			case 8: f.diceGame();
 				break;
-			case 9:
+			case 9: //f.lottoGame();
+					f.arrayLotteGame();
+				break;
+			case 10: 
 				System.out.println("프로그램을 종료 합니다.");
 				break;
 			default:
-				System.out.println("잘못 입력 하셨습니다. 다시 입력 해주세요.");
+				System.out.println("잘못 입력 하셨습니다. 다시 입력 해주세요."); 
 			}
 			System.out.println();
-		} while (num != 9);
+		} while (num != 10);
 		
 	}
 }

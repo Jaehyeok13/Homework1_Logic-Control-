@@ -1,5 +1,9 @@
 package com.jh.hw.controller;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Scanner;
 
 public class Function {
@@ -279,5 +283,43 @@ public class Function {
 		System.out.println("종료합니다.");
 	}
 	
+	public void lottoGame() {
+		int[][] lotto = new int[2][6];
 
+		for (int i = 0; i < lotto.length; i++) {
+			for (int j = 0; j < lotto[i].length; j++) {
+				lotto[i][j] = (int) (Math.random() * 45) + 1;
+				for (int k = 0; k < j; k++) {
+					if (lotto[i][j] == lotto[i][k]) {
+						j--;
+						break;
+					}
+				}
+			}
+		}
+		
+		for (int i = 0; i < lotto.length; i++) {
+			for(int j =0; j < lotto[i].length; j++) {
+			System.out.print(lotto[i][j] + " ");
+			}
+			System.out.println();
+		}
+
+	}
+
+	public void arrayLotteGame() {
+		List<Integer> list = new ArrayList<Integer>();
+		List<Integer> lotto = new ArrayList<Integer>(); 
+		for(int i = 0; i <= 45; i++) {
+			list.add(i);
+		}
+		Collections.shuffle(list);
+		
+		for(int i = 0; i < 6; i++) {
+			lotto.add(list.get(i));
+		}
+		
+		Collections.sort(lotto);
+		System.out.println(lotto);
+	}
 }

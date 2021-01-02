@@ -8,5 +8,4 @@ public class Run {
 		Menu m  = new Menu();
 		m.displayMenu();
 	}
-
 }
